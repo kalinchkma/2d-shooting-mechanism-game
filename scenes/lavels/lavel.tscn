@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://fan5yrwlnhxl"]
+
+[ext_resource type="Script" path="res://scenes/lavels/lavel.gd" id="1_yk3qk"]
+[ext_resource type="PackedScene" uid="uid://dn0e2v2ime4nf" path="res://scenes/player/player.tscn" id="2_35i4h"]
+
+[node name="Lavel" type="Node2D"]
+script = ExtResource("1_yk3qk")
+
+[node name="Ground" type="Node2D" parent="."]
+
+[node name="Projectiles" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Player" parent="." instance=ExtResource("2_35i4h")]
+position = Vector2(616, 926)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
+[node name="Lights" type="Node2D" parent="."]
+
+[connection signal="grenade_shoot" from="Player" to="." method="_on_player_grenade_shoot"]
+[connection signal="laser_shoot" from="Player" to="." method="_on_player_laser_shoot"]
