@@ -19,7 +19,5 @@ func _on_body_entered(body):
 
 
 
-
-
 func _on_self_destruct_timer_timeout():
 	queue_free()

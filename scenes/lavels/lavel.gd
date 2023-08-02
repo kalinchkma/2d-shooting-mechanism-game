@@ -4,8 +4,17 @@ class_name LevelParent
 # Load the scene
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
 var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
+var item_scene: PackedScene = preload("res://scenes/items/item.tscn")
 
+func _ready():
+	for container in get_tree().get_nodes_in_group('Container'):
+		container.connect("open", _on_container_opened)
 
+func _on_container_opened(pos, direction):
+	var item = item_scene.instantiate()
+	item.position = pos
+	item.direction = direction
+	$Items.call_deferred("add_child",item)
 
 func _on_gate_player_exited_gate(body):
 	print("Player has exited the gate", body)
