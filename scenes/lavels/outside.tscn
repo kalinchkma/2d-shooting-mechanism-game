@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://diywsf3gtnn5v"]
+[gd_scene load_steps=22 format=3 uid="uid://diywsf3gtnn5v"]
 
 [ext_resource type="PackedScene" uid="uid://fan5yrwlnhxl" path="res://scenes/lavels/lavel.tscn" id="1_axm15"]
 [ext_resource type="Texture2D" uid="uid://ij4v7dmcmlgu" path="res://graphics/ground/stones.png" id="2_cjqmv"]
@@ -15,8 +15,9 @@
 [ext_resource type="PackedScene" uid="uid://lvnmsl4kj7og" path="res://scenes/objects/house.tscn" id="11_0vh0g"]
 [ext_resource type="PackedScene" uid="uid://ds0dkbsr2i5q2" path="res://scenes/objects/light_fan_animation.tscn" id="12_33hr2"]
 [ext_resource type="PackedScene" uid="uid://0wdvrehudmna" path="res://scenes/projectiles/steam_vent.tscn" id="12_e2yt2"]
-[ext_resource type="PackedScene" uid="uid://crhepv3lucxed" path="res://scenes/container/crate.tscn" id="16_asstq"]
-[ext_resource type="PackedScene" uid="uid://daoicwbinlx3n" path="res://scenes/container/toilet.tscn" id="17_ukwr3"]
+[ext_resource type="PackedScene" uid="uid://do2rg5ocmnxp3" path="res://scenes/items/item.tscn" id="16_8nkj7"]
+[ext_resource type="PackedScene" uid="uid://daoicwbinlx3n" path="res://scenes/container/toilet.tscn" id="17_knria"]
+[ext_resource type="PackedScene" uid="uid://crhepv3lucxed" path="res://scenes/container/crate.tscn" id="18_8ogxn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2quv1"]
 resource_name = "walls"
@@ -117,10 +118,13 @@ position = Vector2(671, -416)
 position = Vector2(616, 584)
 metadata/_edit_group_ = true
 
-[node name="Crate" parent="." index="4" instance=ExtResource("16_asstq")]
-position = Vector2(1057, 822)
+[node name="Item" parent="." index="6" instance=ExtResource("16_8nkj7")]
+position = Vector2(177, 492)
 
-[node name="Toilet" parent="." index="5" instance=ExtResource("17_ukwr3")]
-position = Vector2(817, 1137)
+[node name="Toilet" parent="." index="7" instance=ExtResource("17_knria")]
+position = Vector2(1384, 575)
+
+[node name="Crate" parent="." index="8" instance=ExtResource("18_8ogxn")]
+position = Vector2(1006, 721)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

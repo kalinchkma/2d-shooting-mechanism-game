@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://fan5yrwlnhxl"]
+[gd_scene load_steps=4 format=3 uid="uid://fan5yrwlnhxl"]
 
 [ext_resource type="Script" path="res://scenes/lavels/lavel.gd" id="1_yk3qk"]
 [ext_resource type="PackedScene" uid="uid://dn0e2v2ime4nf" path="res://scenes/player/player.tscn" id="2_35i4h"]
+[ext_resource type="PackedScene" uid="uid://c2lj7as2kbdc4" path="res://scenes/user interface/ui.tscn" id="3_c55uq"]
 
 [node name="Lavel" type="Node2D"]
 script = ExtResource("1_yk3qk")
@@ -19,6 +20,8 @@ zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
 [node name="Lights" type="Node2D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("3_c55uq")]
 
 [connection signal="grenade_shoot" from="Player" to="." method="_on_player_grenade_shoot"]
 [connection signal="laser_shoot" from="Player" to="." method="_on_player_laser_shoot"]
